@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .box {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 0 auto;
+            width: 50%;
+            text-align: center;
+        }
+
+        header {
+            text-align: center;
+            background-color: #000;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select,
+        input[type="url"],
+        input[type="text"],
+        textarea {
+            width: calc(100% - 18px);
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <header>
+            <h1>Resume Builder</h1>
+        </header>
+
+        <form action="submit_skills.php" method="post">
+
+            <section>
+                <h2>Skills</h2>
+
+                <div>
+                    <label for="skill1">Skill 1:</label>
+                    <input type="text" id="skill1" name="skill1" required>
+
+                    <label for="level1">Level:</label>
+                    <select id="level1" name="level1" required>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="skill2">Skill 2:</label>
+                    <input type="text" id="skill2" name="skill2" required>
+
+                    <label for="level2">Level:</label>
+                    <select id="level2" name="level2" required>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="skill3">Skill 3:</label>
+                    <input type="text" id="skill3" name="skill3" required>
+
+                    <label for="level3">Level:</label>
+                    <select id="level3" name="level3" required>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+
+            </section>
+
+            <section>
+                <h2>Online Platform Accounts</h2>
+
+                <div>
+                    <label for="leetcode">LeetCode:</label>
+                    <input type="url" id="leetcode" name="leetcode">
+                </div>
+
+                <div>
+                    <label for="hackerrank">HackerRank:</label>
+                    <input type="url" id="hackerrank" name="hackerrank">
+                </div>
+
+                <div>
+                    <label for="suntek">SunTek:</label>
+                    <input type="url" id="suntek" name="suntek">
+                </div>
+
+                <div>
+                    <label for="linkedin">LinkedIn:</label>
+                    <input type="url" id="linkedin" name="linkedin">
+                </div>
+
+            </section>
+
+            <section>
+                <h2>Summary</h2>
+
+                <label for="summary">Brief Summary:</label>
+                <textarea id="summary" name="summary" rows="5" required></textarea>
+
+            </section>
+
+            <button type="submit">Submit Skills</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

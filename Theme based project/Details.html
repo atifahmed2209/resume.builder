@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Resume Builder</h1>
+    </header>
+
+    <form action="submit_resume.php" method="post" enctype="multipart/form-data">
+
+        <section>
+            <label for="Upload Photo">Upload Photo</label>
+            <input type="file" id="photo" name="photo">
+        </section>
+
+        <section>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phoneNo">Phone Number:</label>
+            <input type="tel" id="phoneNo" name="phoneNo" required>
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="zipCode">Zip Code:</label>
+            <input type="text" id="zipCode" name="zipCode" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="School name">School name:</label>
+            <input type="text" id="School name" name="School name" required>
+
+            <label for="SSC/CBSE percentage">SSC/CBSE percentage:</label>
+            <input type="number" id="SSC/CBSE percentage" name="SSC/CBSE percentage" required>
+
+            <label for="Inter college name">Inter college name:</label>
+            <input type="text" id="Inter college name" name="Inter college name" required>
+
+            <label for="Intermediate percentage">Intermediate percentage:</label>
+            <input type="number" id="Intermediate percentage" name="Intermediate percentage" required>
+
+            <label for="Degree name">Degree name:</label>
+            <input type="text" id="Degree name" name="Degree name" required>
+            
+            <label for="College name">College name:</label>
+            <input type="text" id="College name" name="College name" required>
+
+            <label for="CGPA">CGPA:</label>
+            <input type="number" id="CGPA" name="CGPA" required>
+
+
+        </section>
+
+        <button type="submit">Submit Resume</button>
+
+    </form>
+
+    <script>
+        // Preview uploaded photo
+        const photoInput = document.getElementById('photo');
+        const photoPreview = document.getElementById('uploaded-photo');
+
+        photoInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    photoPreview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
